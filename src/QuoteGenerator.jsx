@@ -210,24 +210,34 @@ function QuoteGenerator() {
 
   const tweetQuote = () => {
     const tweetText = `${quote.quote} - ${quote.author}`;
-    const twitterURL = `https://twitter.com/tweet?text=${encodeURIComponent(tweetText)}`;
-    window.open(twitterURL, '_blank')
-  }
+    const twitterURL = `https://twitter.com/tweet?text=${encodeURIComponent(
+      tweetText
+    )}`;
+    window.open(twitterURL, "_blank");
+  };
   return (
     <>
-    <div id="quote-box">
-      <p id="text"><i className="fa-solid fa-quote-left" style={{color: "#333"}}></i> {quote.quote}</p>
-      <p id="author">- {quote.author}</p>
-      <div className="nfooter">
-        <div className="socials">
-          <button onClick={tweetQuote}>
-            <a id="tweet-quote" href="twitter.com/intent/tweet" target="_blank"><i className="fa-brands fa-x-twitter" style={{color: "#fff"}}></i></a>
+      <div id="quote-box">
+        <p id="text">
+          <i className="fa-solid fa-quote-left" style={{ color: "#333" }}></i>{" "}
+          {quote.quote}
+        </p>
+        <p id="author">- {quote.author}</p>
+        <div className="nfooter">
+          <button onClick={tweetQuote} className="socials">
+            {/* <a id="tweet-quote" href="twitter.com/intent/tweet" target="_blank"> */}
+            <i className="fa-brands fa-x-twitter" style={{ color: "#fff" }}></i>
+            {/* </a> */}
+          </button>
+          <button id="new-quote" onClick={handleClick}>
+            New quote
           </button>
         </div>
-        <button id="new-quote" onClick={handleClick}>New quote</button>
       </div>
-    </div>
-    <div className="footer"> by <a href="https://github.com/OB-Adams">OB</a></div>
+      <div className="footer">
+        {" "}
+        by <a href="https://github.com/OB-Adams">OB</a>
+      </div>
     </>
   );
 }

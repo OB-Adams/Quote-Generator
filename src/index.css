@@ -39,6 +39,10 @@ body {
   color: #777;
 }
 
+#tweet-quote {
+  width: 10rem;
+}
+
 /* Footer Container */
 .nfooter {
   display: flex;
@@ -48,18 +52,19 @@ body {
 }
 
 /* Social Buttons Styling */
-.socials button {
-  background-color: #1da1f2; /* Twitter blue */
+.socials {
+  background-color: #1da1f2;
   border: none;
   color: white;
   padding: 10px 20px;
   margin: 0 5px;
   border-radius: 5px;
   cursor: pointer;
+  width: 10rem;
   transition: background-color 0.3s ease;
 }
 
-.socials button:hover {
+.socials:hover {
   background-color: #0d8ce0;
 }
 
@@ -80,14 +85,14 @@ body {
 }
 
 .footer {
-    margin-top: 10px;
-    text-align: center;
-    color: #fff;
+  margin-top: 10px;
+  text-align: center;
+  color: #fff;
 }
 
 .footer a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -97,11 +102,11 @@ body {
 
   .nfooter {
     flex-direction: column;
+    gap: 0.6em;
   }
 
-  .nfooter button,
-  .socials button {
-    width: 100%;
-    margin: 5px 0;
+  .nfooter button {
+    min-width: 7rem;
+    /* padding: ; */
   }
 }
