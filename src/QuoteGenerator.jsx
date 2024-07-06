@@ -59,12 +59,21 @@ function QuoteGenerator() {
   return (
     <>
       <div id="quote-box">
-        {error && <p>Something went wrong. Please try again!</p>}
-        <p id="text">
-          <i className="fa-solid fa-quote-left" style={{ color: "#333" }}></i>{" "}
-          {quote ? quote.quote : "Loading..."}
-        </p>
-        <p id="author">- {quote ? quote.author : "Unknown"}</p>
+        {error ? (
+          <p>Something went wrong. Please try again!</p>
+        ) : (
+          <>
+            <p id="text">
+              <i
+                className="fa-solid fa-quote-left"
+                style={{ color: "#333" }}
+              ></i>{" "}
+              {quote ? quote.quote : "Loading..."}
+            </p>
+            <p id="author">- {quote ? quote.author : "Unknown"}</p>
+          </>
+        )}
+
         <div className="nfooter">
           <button onClick={tweetQuote} className="socials">
             <i className="fa-brands fa-x-twitter" style={{ color: "#fff" }}></i>
