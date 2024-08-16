@@ -58,33 +58,45 @@ function QuoteGenerator() {
 
   return (
     <>
-      <div id="quote-box">
+      <div
+        id="quote-box"
+        className="flex flex-col w-4/5 max-w-lg p-8 text-center bg-white rounded-lg shadow-md font-sans"
+      >
         {error ? (
-          <p>Something went wrong. Please try again!</p>
+          <p className="text-red-500">Something went wrong. Please try again!</p>
         ) : (
           <>
-            <p id="text">
-              <i
-                className="fa-solid fa-quote-left"
-                style={{ color: "#333" }}
-              ></i>{" "}
+            <p id="text" className="text-xl mb-5 italic text-gray-800">
+              <i className="fa-solid fa-quote-left text-gray-800"></i>{" "}
               {quote ? quote.quote : "Loading..."}
             </p>
-            <p id="author">- {quote ? quote.author : "Unknown"}</p>
+            <p id="author" className="text-lg mb-5 text-gray-500">
+              - {quote ? quote.author : "Unknown"}
+            </p>
           </>
         )}
 
-        <div className="nfooter">
-          <button onClick={tweetQuote} className="socials">
-            <i className="fa-brands fa-x-twitter" style={{ color: "#fff" }}></i>
+        <div className="nfooter flex justify-between items-center mt-5">
+          <button
+            onClick={tweetQuote}
+            className="socials bg-black text-white py-2 px-4 rounded-md hover:scale-105 active:scale-100 transition-all duration-300"
+          >
+            <i className="fa-brands fa-x-twitter"></i>
           </button>
-          <button id="new-quote" onClick={handleClick}>
+          <button
+            id="new-quote"
+            onClick={handleClick}
+            className="bg-purple-600 text-white py-2 px-4 rounded-md hover:scale-105 active:scale-100 transition-colors duration-300"
+          >
             New quote
           </button>
         </div>
       </div>
-      <div className="footer">
-        Designed and Coded by <a href="https://github.com/OB-Adams">OB</a>
+      <div className="footer mt-6 text-center text-white font-mono">
+        Designed and Coded by{" "}
+        <a href="https://github.com/OB-Adams" className="text-white underline">
+          OB
+        </a>
       </div>
     </>
   );
